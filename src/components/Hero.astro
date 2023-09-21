@@ -1,0 +1,103 @@
+---
+let heroText =
+  "A creative designer with a passion for crafting visual experiences and creative websites.";
+let buttonText = "Read More";
+let linkHref = "/about";
+let heroImageSrc =
+  "https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64ac2dd42d61ed5ee6e20a89_Hero%20Image.webp";
+let arrowImageSrc = "/assets/arrow.svg";
+let loopedTextImageSrc = "/assets/scroll-to-see.svg";
+// "https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64ac3324204c04bb25204f6f_Looped%20Text.svg";
+let linkArrowImageSrc = "/assets/arrow-link.svg";
+// "https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64ac34bdef6bada97532d22b_Link%20arrow.svg";
+---
+
+<section class="hero-section">
+  <div class="w-layout-blockcontainer main-container w-container">
+    <div class="hero-container">
+      <div class="h4">Hello, I'm Adhil Roshan</div>
+      <div class="hero-heading-wrapper">
+        <h1 class="display">Creative</h1>
+        <img
+          src={heroImageSrc}
+          loading="lazy"
+          alt="Hero Image"
+          class="hero-image"
+        />
+        <h1 class="display">— Designer</h1>
+      </div>
+      <div class="hero-text-wrapper">
+        <div
+          data-w-id="d64ec909-89af-4e03-52ac-5661ab1e87b3"
+          class="hero-loop-animation-wrapper"
+        >
+          <img
+            src={arrowImageSrc}
+            loading="lazy"
+            alt="Arrow"
+            class="arrow-image"
+          />
+          <img
+            src={loopedTextImageSrc}
+            loading="lazy"
+            alt="Looped Text"
+            class="looped-text loop-it"
+          />
+        </div>
+        <div class="hero-text">
+          <p class="paragraph-big">{heroText}</p>
+          <a
+            data-w-id="52970ff0-cab0-5bf1-306c-5f9d4f77080c"
+            href={linkHref}
+            class="link w-inline-block"
+          >
+            <div class="button">{buttonText}</div>
+            <div class="link-arrow-wrapper">
+              <img
+                src={linkArrowImageSrc}
+                loading="lazy"
+                alt="Link Arrow"
+                class="link-arrow"
+              />
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .loop-it {
+    animation: spin 10s linear infinite;
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<!-- 
+    .hero-section
+    .w-layout-blockcontainer
+    .main-container
+    .hero-container
+    .h4
+    .hero-heading-wrapper
+    .display
+    .hero-image
+    .hero-text-wrapper
+    .hero-loop-animation-wrapper
+    .arrow-image
+    .looped-text
+    .hero-text
+    .paragraph-big
+    .link
+    .button
+    .link-arrow-wrapper
+    .link-arrow
+ -->

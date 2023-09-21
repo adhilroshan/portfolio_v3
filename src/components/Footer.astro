@@ -1,0 +1,111 @@
+---
+let userImageSrc =
+  "https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64ac2dd42d61ed5ee6e20a89_Hero%20Image.webp";
+let emailAddress = "paul.adams@rnnstudio.com";
+let socialLinks = [
+  {
+    iconSrc: "path/to/your/icon1.svg",
+    link: "#",
+  },
+  {
+    iconSrc: "path/to/your/icon2.svg",
+    link: "#",
+  },
+  {
+    iconSrc: "path/to/your/icon3.svg",
+    link: "#",
+  },
+  {
+    iconSrc: "path/to/your/icon4.svg",
+    link: "#",
+  },
+];
+let poweredByText = "Powered by";
+let poweredByLink = "#";
+let webflowText = "Webflow";
+let changelogLink = "/template-info/changelog";
+let licenseLink = "/template-info/license";
+---
+
+<section class="footer-section">
+  <div class="w-layout-blockcontainer main-container w-container">
+    <div class="footer-container">
+      <div class="user-image-wrapper">
+        <img
+          src={userImageSrc}
+          loading="lazy"
+          alt="Hero Image"
+          class="user-image"
+        />
+      </div>
+      <h3 class="say-hello-h2">Say Hello.</h3>
+      <div class="footer-contact-details-wrapper">
+        <a
+          href={"mailto:" + emailAddress}
+          class="website-link-wrapper w-inline-block"
+        >
+          <div>{emailAddress}</div>
+          <img
+            src="path/to/your/email-icon.svg"
+            loading="lazy"
+            alt=""
+            class="website-link-arrow"
+          />
+        </a>
+        <div class="social-link-blocks-wrapper">
+          {
+            socialLinks.map((link) => (
+              <a href={link.link} class="social-link-block w-inline-block">
+                <div class="social-link-embed w-embed">
+                  <img src={link.iconSrc} loading="lazy" alt="" />
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+      <div class="footer-links-wrapper">
+        <div class="paragraph-mini body-font-color">
+          © RNN Studio. {poweredByText}
+          <a href={poweredByLink} class="template-utility-footer-link"
+            >{webflowText}</a
+          >
+        </div>
+        <div class="template-utility-footer-links-wrapper">
+          <a
+            href={changelogLink}
+            class="template-utility-footer-link paragraph-mini">Changelog</a
+          >
+          <a
+            href={licenseLink}
+            class="template-utility-footer-link paragraph-mini">License</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 
+
+    footer-section
+    w-layout-blockcontainer
+    main-container
+    w-container
+    footer-container
+    user-image-wrapper
+    user-image
+    say-hello-h2
+    footer-contact-details-wrapper
+    website-link-wrapper
+    website-link-arrow
+    social-link-blocks-wrapper
+    social-link-block
+    social-link-embed
+    template-utility-footer-link
+    footer-links-wrapper
+    paragraph-mini
+    body-font-color
+
+ -->

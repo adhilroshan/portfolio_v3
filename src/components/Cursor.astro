@@ -1,0 +1,49 @@
+<div class="cursor">
+  <div class="cursor-smaller"></div>
+  <div class="cursor_move">
+    <div class="cursor_dot is-larger"></div>
+  </div>
+</div>
+
+<style>
+  .cursor {
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    mix-blend-mode: difference;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.2s;
+    display: flex;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+  }
+  .cursor_dot {
+    width: 1em;
+    height: 1em;
+    background-color: #ff6b11;
+    border-radius: 50%;
+    transition: all 0.3s;
+  }
+  .cursor-smaller {
+    transform: scale(0.6);
+  }
+  .cursor_dot.is-larger {
+    width: 3em;
+    height: 3em;
+    background-color: #cfdee5;
+  }
+  .cursor {
+    pointer-events: none;
+  }
+
+  @media (pointer: fine) {
+    body:hover .cursor {
+      opacity: 1;
+    }
+  }
+</style>

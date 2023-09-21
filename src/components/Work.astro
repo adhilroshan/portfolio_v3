@@ -1,0 +1,138 @@
+---
+let projects = [
+  {
+    id: "project1",
+    link: "/project/paytime-wallet",
+    alt: "Paytime Wallet",
+    imageSrc:
+      "https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c291b85b72d764a6885486_64c28c80b4f375fa26ecfb47_Mask%20group-2.webp",
+    imageSizes:
+      "(max-width: 479px) 100vw, (max-width: 767px) 88vw, (max-width: 991px) 540px, 57vw",
+    imageSrcSet:
+      "https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c291b85b72d764a6885486_64c28c80b4f375fa26ecfb47_Mask%20group-2-p-500.webp   500w, https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c291b85b72d764a6885486_64c28c80b4f375fa26ecfb47_Mask%20group-2-p-800.webp   800w, https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c291b85b72d764a6885486_64c28c80b4f375fa26ecfb47_Mask%20group-2-p-1080.webp 1080w, https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c291b85b72d764a6885486_64c28c80b4f375fa26ecfb47_Mask%20group-2-p-1600.webp 1600w, https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c291b85b72d764a6885486_64c28c80b4f375fa26ecfb47_Mask%20group-2-p-2000.webp 2000w, https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c291b85b72d764a6885486_64c28c80b4f375fa26ecfb47_Mask%20group-2.webp        2496w", // Add your image srcset here
+    title: "Paytime Wallet",
+    description:
+      "A web project that brings together luxury, elegance, and sophistication.",
+    category: "Mobile App",
+  },
+  {
+    id: "project2",
+    link: "/project/beyond-energy",
+    alt: "Beyond Energy",
+    imageSrc:
+      "https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c291dbd0ddbe85f84129a7_64c28c7f826829e08847e211_Mask%20group-3.webp",
+    imageSizes:
+      "(max-width: 479px) 100vw, (max-width: 767px) 88vw, (max-width: 991px) 540px, 57vw",
+    imageSrcSet:
+      "https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c291dbd0ddbe85f84129a7_64c28c7f826829e08847e211_Mask%20group-3-p-500.webp   500w,                          https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c291dbd0ddbe85f84129a7_64c28c7f826829e08847e211_Mask%20group-3-p-800.webp   800w,                          https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c291dbd0ddbe85f84129a7_64c28c7f826829e08847e211_Mask%20group-3-p-1080.webp 1080w,                          https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c291dbd0ddbe85f84129a7_64c28c7f826829e08847e211_Mask%20group-3-p-1600.webp 1600w,                          https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c291dbd0ddbe85f84129a7_64c28c7f826829e08847e211_Mask%20group-3-p-2000.webp 2000w,                          https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c291dbd0ddbe85f84129a7_64c28c7f826829e08847e211_Mask%20group-3.webp        2496w", // Add your image srcset here
+    title: "Beyond Energy",
+    description:
+      "A web project that brings together luxury, elegance, and sophistication.",
+    category: "Branding",
+  },
+];
+---
+
+<section data-w-id="477bea50-3caa-ddd2-6e3a-0c816d345dc0" class="work-section">
+  <div id="Work" class="anchor-div"></div>
+  <div class="w-layout-blockcontainer main-container w-container">
+    <div class="work-blocks-wrapper">
+      <div class="work-block-heading-wrapper">
+        <h2 class="h2">Selected work..</h2>
+      </div>
+      <div class="work-blocks-list-wrapper w-dyn-list">
+        <div role="list" class="work-blocks-list w-dyn-items">
+          {
+            projects.map((project) => (
+              <div role="listitem" class="work-block-wrapper w-dyn-item">
+                <div class="work-block">
+                  <a
+                    data-w-id="65398965-f93a-aec8-11a4-3fcdbd66f6a0"
+                    href={project.link}
+                    class="work-block-link-wrapper w-inline-block"
+                  >
+                    <div class="work-block-image-wrapper">
+                      <img
+                        alt={project.alt}
+                        loading="lazy"
+                        src={project.imageSrc}
+                        sizes={project.imageSizes}
+                        srcset={project.imageSrcSet}
+                        class="work-block-image"
+                      />
+                    </div>
+                  </a>
+                  <a
+                    data-w-id="f15fb4de-5ad7-a67e-c90a-185a8ad6e9e4"
+                    href={project.link}
+                    class="work-block-text-wrapper w-inline-block"
+                  >
+                    <h2 class="thumbnail-title">{project.title}</h2>
+                    <div class="work-block-para-wrapper">
+                      <p class="paragraph-small">{project.description}</p>
+                      <div class="thumbnail-link">
+                        <div style="width: 25px" class="link-line" />
+                        <div>Discover</div>
+                      </div>
+                    </div>
+                    <div class="work-type-wrapper">
+                      <div class="thumbnail-category">{project.category}</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div class="work-link">
+        <a
+          data-w-id="cf739027-d24e-ac1e-e753-955d6252f29c"
+          href="#"
+          class="link w-inline-block"
+          ><div class="button">See more work</div>
+          <div class="link-arrow-wrapper">
+            <img
+              src="https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64ac34bdef6bada97532d22b_Link%20arrow.svg"
+              loading="lazy"
+              alt="Link Arrow"
+              class="link-arrow"
+            />
+          </div></a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 
+        .work-section
+        .anchor-div
+        .w-layout-blockcontainer
+        .main-container
+        .work-blocks-wrapper
+        .work-block-heading-wrapper
+        .h2
+        .work-blocks-list-wrapper
+        .w-dyn-list
+        .work-blocks-list
+        .w-dyn-items
+        .work-block-wrapper
+        .w-dyn-item
+        .work-block
+        .work-block-link-wrapper
+        .work-block-image-wrapper
+        .work-block-image
+        .work-block-text-wrapper
+        .thumbnail-title
+        .work-block-para-wrapper
+        .paragraph-small
+        .thumbnail-link
+        .link-line
+        .work-type-wrapper
+        .thumbnail-category
+        .work-link
+        .button
+        .link-arrow-wrapper
+        .link-arrow
+     -->
