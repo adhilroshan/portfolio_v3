@@ -6,17 +6,20 @@ import FloatingEmail from "../components/global/FloatingEmail.astro";
 import "../styles/global.css";
 import Navbar from "../components/global/Navbar.astro";
 import MainHead from "../components/global/MainHead.astro";
+// 
 
 interface Props {
-  title?: string | undefined;
-  description?: string | undefined;
+	title?: string | undefined;
+	description?: string | undefined;
 }
 
 const { title, description } = Astro.props;
+
 ---
 
 <html lang="en">
   <head>
+    
     <MainHead title={title} description={description} />
   </head>
 
@@ -26,20 +29,5 @@ const { title, description } = Astro.props;
     <Footer />
     <ScrollIndicator />
     <FloatingEmail />
-    <!-- <script>
-      import Lenis from "@studio-freight/lenis";
-      const lenis = new Lenis();
-
-      lenis.on("scroll", (e: any) => {
-        console.log(e);
-      });
-
-      function raf(time: any) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-
-      requestAnimationFrame(raf);
-    </script> -->
   </body>
 </html>

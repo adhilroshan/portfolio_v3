@@ -1,0 +1,215 @@
+---
+import "../../styles/projects.css";
+
+// const {slug}= Astro.params;
+
+import Layout from "../../layouts/Layout.astro";
+
+let projectTitle = "Paytime Wallet";
+let role = "Development";
+let projectType = "Mobile App";
+let projectYear = "2023";
+
+let projectOverview =
+  "The project at hand is an exciting opportunity for our design agency to collaborate with Orca Magazine to create a compelling and visually stunning digital presence. The primary goal of this project is to develop a modern, user-friendly, and responsive website that effectively showcases.";
+
+let projectImageUrl =
+  "https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c291b85b72d764a6885486_64c28c80b4f375fa26ecfb47_Mask%20group-2.webp";
+let liveSiteUrl = "#";
+let dividerImage =
+  "https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c294787876ff59087a7509_64c292b41b1edcd3c29ccd19_Mask%20group.webp";
+
+let problem =
+  "The project at hand is an exciting opportunity for our design agency to collaborate with Orca Magazine to create a compelling and visually stunning digital presence. The primary goal of this project is to develop a modern, user-friendly, and responsive website that effectively showcases.";
+
+let problems = [
+  "https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c2949418d0b9b3d7b6d84f_64c292b3c2a04fadcb884617_Mac.webp",
+  "https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c2949a8e9c4d7a6953fdb8_64c292b3134b44ca95e93f18_Frame%20383.webp",
+];
+
+let solutionOverview =
+  "The project at hand is an exciting opportunity for our design agency to collaborate with Orca Magazine to create a compelling and visually stunning digital presence. The primary goal of this project is to develop a modern, user-friendly, and responsive website that effectively showcases.";
+
+let solutionImage =
+  "https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c294d4ad31c950619c8353_64c292b30dbd99c655e6fa38_Mask%20group-2.webp";
+let solutionImageUrls = [
+  "https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c294d4ad31c950619c8353_64c292b30dbd99c655e6fa38_Mask%20group-2.webp",
+  "https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c294d40ad422de67e01421_64c292b3e044a3f4d61108b0_Mask%20group.webp",
+  "https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c294d4d0ddbe85f84526c1_64c292b47a03c243d2acd04d_Mask%20group-1.webp",
+];
+---
+
+<Layout>
+  <section style="background-color:#d6f0ff" class="work-hero-section">
+    <div class="w-layout-blockcontainer main-container w-container">
+      <div class="work-container">
+        <div class="work-heading-wrapper">
+          <h1 class="work-title">
+            Projects
+          </h1>
+        </div>
+        <div class="work-details-wrapper">
+          <div class="work-details-block">
+            <div class="work-details-block-title">Role</div>
+            <div class="divider"></div>
+            <div class="paragraph-small">{role}</div>
+          </div>
+          <div class="work-details-block">
+            <div class="work-details-block-title">TYPE</div>
+            <div class="divider"></div>
+            <div class="paragraph-small">{projectType}</div>
+          </div>
+          <div class="work-details-block">
+            <div class="work-details-block-title">YEAR</div>
+            <div class="divider"></div>
+            <div class="paragraph-small">{projectYear}</div>
+          </div>
+        </div>
+        <div class="project-image-wrapper">
+          <img
+            transition:name="work-block-image-project1"
+            src={projectImageUrl}
+            loading="lazy"
+            alt=""
+            class="project-image"
+          /><a
+            href={liveSiteUrl}
+            class="project-live-link-wrapper w-inline-block"
+          >
+            <div>Live Site</div>
+
+            <svg
+              class="live-link-icon"
+              width="7"
+              height="8"
+              viewBox="0 0 7 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.71246 2.52146L1.30356 7.42023L0.579102 6.61528L4.988 1.7165H1.10204V0.578125H6.737V6.8392H5.71246V2.52146Z"
+                fill="white"></path>
+            </svg>
+            <div
+              style="-webkit-transform:translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+              class="project-link-orange-bg"
+            >
+            </div>
+            <div class="project-link-bg"></div>
+          </a>
+        </div>
+        <div class="overview-wrapper">
+          <div class="h5">Overview</div>
+          <div class="overview-para-wrappper">
+            <p class="paragraph">{projectOverview}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="divider-image-wrapper">
+    <img src={dividerImage} loading="lazy" alt="" class="divider-image" />
+  </div>
+  <section class="problem-section">
+    <div class="w-layout-blockcontainer main-container w-container">
+      <div class="problem-container">
+        <div class="problem-wrapper">
+          <div class="h5">Problem</div>
+          <div class="problem-para-wrappper">
+            <p class="paragraph">{problem}</p>
+          </div>
+        </div>
+        <div class="problem-image-wrapper">
+          {
+            problems.map((problemImage) => (
+              <img
+                src={problemImage}
+                loading="lazy"
+                alt=""
+                class="problem-image"
+              />
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <div class="divider-image-wrapper">
+      <img
+        src="https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c294b12382b8ec71767bc7_64c292b38561bd68e8212570_Mask%20group-1.webp"
+        loading="lazy"
+        alt=""
+        sizes="100vw"
+        srcset="https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c294b12382b8ec71767bc7_64c292b38561bd68e8212570_Mask%20group-1-p-500.webp 500w, https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c294b12382b8ec71767bc7_64c292b38561bd68e8212570_Mask%20group-1-p-800.webp 800w, https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c294b12382b8ec71767bc7_64c292b38561bd68e8212570_Mask%20group-1-p-1080.webp 1080w, https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c294b12382b8ec71767bc7_64c292b38561bd68e8212570_Mask%20group-1-p-1600.webp 1600w, https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c294b12382b8ec71767bc7_64c292b38561bd68e8212570_Mask%20group-1-p-2000.webp 2000w, https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c294b12382b8ec71767bc7_64c292b38561bd68e8212570_Mask%20group-1-p-2600.webp 2600w, https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c294b12382b8ec71767bc7_64c292b38561bd68e8212570_Mask%20group-1-p-3200.webp 3200w, https://uploads-ssl.webflow.com/64aecd7ccd5ba11a8a5910ca/64c294b12382b8ec71767bc7_64c292b38561bd68e8212570_Mask%20group-1.webp 3840w"
+        class="divider-image"
+      />
+    </div>
+    <section class="solution-section">
+      <div class="w-layout-blockcontainer main-container w-container">
+        <div class="solution-container">
+          <div class="solution-wrapper">
+            <div class="h5">Solution</div>
+            <div class="solution-para-wrappper">
+              <p class="paragraph">{solutionOverview}</p>
+            </div>
+          </div>
+          <div class="solution-images-colletion-list-wrapper w-dyn-list">
+            <div role="list" class="solution-images-colletion-list w-dyn-items">
+              {
+                solutionImageUrls.map((imageUrl) => (
+                  <div
+                    role="listitem"
+                    class="solution-images-colletion-item w-dyn-item w-dyn-repeater-item"
+                  >
+                    <a
+                      href="#"
+                      class="solution-light-box w-inline-block w-lightbox"
+                    >
+                      <img
+                        src={imageUrl}
+                        loading="lazy"
+                        alt=""
+                        class="solution-image"
+                      />
+                    </a>
+                  </div>
+                ))
+              }
+            </div>
+            <div class="w-dyn-hide w-dyn-empty">
+              <div>No items found.</div>
+            </div>
+          </div>
+          <div class="project-nav-links-wrapper group">
+            <div class="previous-link-wrapper">
+              <a href="#" class="previous-link">Prev</a><a
+                href="mailto:adhilroshann.com"
+                class="mail-link-wrapper w-inline-block"
+                ><img
+                  src="https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64b6aa220daa92e54c09b0a5_Mail%20icon.png"
+                  loading="lazy"
+                  alt=""
+                  class="mail-icon"
+                /><img
+                  src="https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64b244baa3284e103eaa06d9_about%20link%20arrow.svg"
+                  loading="lazy"
+                  alt=""
+                  class="mail-link-arrow-icon"
+                /></a>
+            </div>
+            <div class="dividers-wrapper">
+              <div class="left-link-divider"></div>
+              <div
+                class="link-divider group-hover:w-40 transition-all duration-300 transform ease-linear"
+              >
+              </div>
+              <div class="right-link-divider"></div>
+            </div>
+            <div class="next-link-wrapper">
+              <a href="#" class="next-link">Next</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</Layout>

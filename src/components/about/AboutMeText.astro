@@ -1,0 +1,12 @@
+---
+interface Props {
+  aboutText: string | undefined;
+}
+
+const { aboutText } = Astro.props;
+---
+
+<div class="about-me-text-block">
+  <h2 class="h3">About me</h2>
+  <p class="paragraph">{aboutText}</p>
+</div>

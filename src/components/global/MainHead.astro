@@ -1,0 +1,89 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import "../../styles/global.css";
+
+interface Props {
+  title?: string | undefined;
+  description?: string | undefined;
+  img?: string | undefined;
+  //   xdesc?: string | undefined;
+}
+
+const {
+  title = "Adhil Roshan: Personal Site",
+  description = "Hello, I'm Adhil Roshan. A creative designer with a passion for crafting visual experiences and creative websites.",
+  img = '"https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64b21305cb1acb69f60efe83_About%20Me%20Image.webp"',
+  //   xdesc = "Hello, I'm Adhil Roshan. A creative designer with a passion for crafting visual experiences and creative websites.",
+} = Astro.props;
+---
+
+<meta charset="utf-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+<ViewTransitions />
+
+<meta charset="utf-8" />
+<title>{title}</title>
+<meta content={description} name="description" />
+<meta content="Adhil" property="og:title" />
+<meta content={description} property="og:description" />
+<meta content={img} property="og:image" />
+<meta content={title} property="twitter:title" />
+<meta content={description} property="twitter:description" />
+<meta content={img} property="twitter:image" />
+<meta property="og:type" content="website" />
+<meta content="summary_large_image" name="twitter:card" />
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link
+  href="https://fonts.gstatic.com"
+  rel="preconnect"
+  crossorigin="anonymous"
+/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap" rel="stylesheet">
+<!-- <script
+  src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
+  type="text/javascript"></script>
+<script type="text/javascript">
+WebFont.load({ google: { families: ["Outfit:500"] } });
+</script> -->
+<link
+href="https://uploads-ssl.webflow.com/img/favicon.ico"
+rel="shortcut icon"
+  type="image/x-icon"
+/>
+<link
+  href="https://uploads-ssl.webflow.com/img/webclip.png"
+  rel="apple-touch-icon"
+/>
+  <!-- <script type="text/javascript">
+        !(function (o, c) {
+          var n = c.documentElement,
+            t = " w-mod-";
+          (n.className += t + "js"),
+            ("ontouchstart" in o ||
+              (o.DocumentTouch && c instanceof DocumentTouch)) &&
+              (n.className += t + "touch");
+        })(window, document);
+      </script> -->
+<!-- <title>Adhil Roshan</title> -->
+<!-- <script is:inline>
+	// This code is inlined in the head to make dark mode instant & blocking.
+	const getThemePreference = () => {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+			return localStorage.getItem('theme');
+		}
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	};
+	const isDark = getThemePreference() === 'dark';
+	document.documentElement.classList[isDark ? 'add' : 'remove']('theme-dark');
+
+	if (typeof localStorage !== 'undefined') {
+		// Watch the document element and persist user preference when it changes.
+		const observer = new MutationObserver(() => {
+			const isDark = document.documentElement.classList.contains('theme-dark');
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		});
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+	}
+</script> -->

@@ -1,0 +1,24 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+interface Props {
+  experienceData: Array<{
+    date: string;
+    position: string;
+    company: string;
+    link: string;
+  }>;
+}
+
+const { experienceData } = Astro.props;
+---
+
+<div class="about-table">
+  {
+    experienceData.map((experience, index) => (
+      <ExperienceItem
+        {experience}
+        isLast={index === experienceData.length - 1}
+      />
+    ))
+  }
+</div>

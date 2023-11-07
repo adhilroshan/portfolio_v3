@@ -1,0 +1,107 @@
+backend:
+  name: git-gateway
+  branch: main
+  publish_mode: editorial_workflow
+
+editor:
+  preview: false
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: projects
+    label: Projects
+    folder: src/data/projects
+    create: true
+    fields:
+      - { name: id, label: ID, widget: string }
+      - { name: link, label: Link, widget: string }
+      - { name: alt, label: Alt, widget: string }
+      - { name: imageSrc, label: Image Source, widget: image }
+      - { name: imageSizes, label: Image Sizes, widget: string }
+      - { name: imageSrcSet, label: Image SrcSet, widget: string }
+      - { name: title, label: Title, widget: string }
+      - { name: description, label: Description, widget: text }
+      - {
+          name: category,
+          label: Category,
+          widget: select,
+          options: ["Mobile App", "Web App", "Website", "UI/UX Design"],
+        }
+
+  # - name: home
+  #   label: Home Page
+  #   files:
+  #     - name: "introDesk"
+  #       label: "IntroDesk"
+  #       file: src/data/intro-desk.json
+  #       media_library:
+  #         folder_support: true
+  #       fields:
+  #         - name: salutation
+  #           label: Salutation
+  #           widget: string
+  #         - name: name
+  #           label: Name
+  #           widget: string
+  #         - name: tagline
+  #           label: Tagline
+  #           widget: string
+  #         - name: portrait
+  #           label: Portrait
+  #           widget: image
+  #     - name: "projects"
+  #       label: "Projects"
+  #       file: src/data/projects.json
+  #       widget: list
+  #       create: true
+  #       media_library:
+  #         folder_support: true
+  #       fields:
+  #         - name: projects
+  #           label: Projects
+  #           widget: list
+  #           fields:
+  #             - name: id
+  #               label: ID
+  #               widget: string
+  #             - name: title
+  #               label: Title
+  #               widget: string
+  #             - name: description
+  #               label: Description
+  #               widget: string
+  #             - name: imgs
+  #               label: Images
+  #               widget: list
+  #               create: true
+  #               fields:
+  #                 - name: img
+  #                   label: Image
+  #                   widget: image
+  #             - name: heroImg
+  #               label: HeroImg
+  #               widget: image
+  #     - name: "quickLinks"
+  #       label: "QuickLinks"
+  #       file: src/data/quick-links.json
+  #       media_library:
+  #         folder_support: true
+  #       fields:
+  #         - name: quickLinks
+  #           label: Quick Links
+  #           widget: list
+  #           fields:
+  #             - name: title
+  #               label: Title
+  #               widget: string
+  #             - name: subtext
+  #               label: Subtext
+  #               widget: string
+  #             - name: link
+  #               label: Link
+  #               widget: string
+  #             - name: icon
+  #               label: Icon
+  #               widget: image

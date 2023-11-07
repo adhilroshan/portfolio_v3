@@ -1,0 +1,65 @@
+---
+let steps = [
+  {
+    stepNumber: 1,
+    stepTitle: "User Research",
+    stepDescription:
+      "Understanding the target audience, their needs, preferences, and behaviors is crucial, conducting user research through surveys.",
+    stepImageSrc:
+      "https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64b24ef6333b14f0b5f04fd5_Step%20Card.png",
+  },
+  {
+    stepNumber: 2,
+    stepTitle: "Wireframing",
+    stepDescription:
+      "Understanding the target audience, their needs, preferences, and behaviors is crucial, conducting user research through surveys.",
+    stepImageSrc:
+      "https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64c29bbfe7f83f4424e9c6bb_Wireframing.webp",
+  },
+  {
+    stepNumber: 3,
+    stepTitle: "Designing",
+    stepDescription:
+      "Understanding the target audience, their needs, preferences, and behaviors is crucial, conducting user research through surveys.",
+    stepImageSrc:
+      "https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64c29bbf75bd4637ede77b19_Design%20Icon.webp",
+  },
+];
+---
+
+<section class="process-section">
+  <div class="w-layout-blockcontainer main-container w-container">
+    <div class="process-container">
+      <div class="process-heading-wrapper">
+        <div class="h6">Anyway, why work with me?</div>
+        <h2 class="h2">My Process</h2>
+      </div>
+
+      <div class="step-cards-container">
+        {
+          steps.map((step, stepNumber) => (
+            <div data-scroll data-scroll-speed="0.5" class={`step-card _${stepNumber}`}>
+              <div class="step-text-wrapper">
+                <div class="step">STEP {step.stepNumber}</div>
+                <div class="step-heading">
+                  <h3 class="h3">{step.stepTitle}</h3>
+                </div>
+                <p class="paragraph-small">{step.stepDescription}</p>
+              </div>
+              <div class="step-card-image-wrapper">
+                <img
+                  src={step.stepImageSrc}
+                  loading="lazy"
+                  alt={step.stepTitle}
+                  sizes="(max-width: 479px) 100vw, (max-width: 767px) 66vw, (max-width: 991px) 31vw, 310px"
+                  srcset={`${step.stepImageSrc} 500w, ${step.stepImageSrc} 624w`}
+                  class="step-card-image"
+                />
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

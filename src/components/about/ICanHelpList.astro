@@ -1,0 +1,14 @@
+---
+import ICanHelpCategory from "./ICanHelpCategory.astro";
+interface Props {
+  helpCategories: Array<{
+    items: string[];
+  }>;
+}
+
+const { helpCategories } = Astro.props;
+---
+
+<div class="i-can-help-rows-wrapper">
+  {helpCategories.map((category, index) => <ICanHelpCategory {category} />)}
+</div>

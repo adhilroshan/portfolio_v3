@@ -33,7 +33,7 @@ let projects = [
 ];
 ---
 
-<section data-w-id="477bea50-3caa-ddd2-6e3a-0c816d345dc0" class="work-section">
+<section style="" class="work-section">
   <div id="Work" class="anchor-div"></div>
   <div class="w-layout-blockcontainer main-container w-container">
     <div class="work-blocks-wrapper">
@@ -44,21 +44,21 @@ let projects = [
         <div role="list" class="work-blocks-list w-dyn-items">
           {
             projects.map((project) => (
-              <div role="listitem" class="work-block-wrapper w-dyn-item">
+              <div role="listitem" class="work-block-wrapper w-dyn-item group">
                 <div class="work-block">
                   <a
-                    data-w-id="65398965-f93a-aec8-11a4-3fcdbd66f6a0"
                     href={project.link}
                     class="work-block-link-wrapper w-inline-block"
                   >
-                    <div class="work-block-image-wrapper">
+                    <div class="work-block-image-wrapper ">
                       <img
+                        transition:name={`work-block-image-${project.id}`}
                         alt={project.alt}
                         loading="lazy"
                         src={project.imageSrc}
                         sizes={project.imageSizes}
                         srcset={project.imageSrcSet}
-                        class="work-block-image"
+                        class="work-block-image group-hover:scale-125 transition-all ease-in-out duration-300"
                       />
                     </div>
                   </a>
@@ -67,11 +67,16 @@ let projects = [
                     href={project.link}
                     class="work-block-text-wrapper w-inline-block"
                   >
-                    <h2 class="thumbnail-title">{project.title}</h2>
+                    <h2
+                      class="thumbnail-title"
+                      transition:name={`work-title-${project.id}`}
+                    >
+                      {project.title}
+                    </h2>
                     <div class="work-block-para-wrapper">
                       <p class="paragraph-small">{project.description}</p>
                       <div class="thumbnail-link">
-                        <div style="width: 25px" class="link-line" />
+                        <div class="link-line w-7 transition-all transform ease-linear duration-300 group-hover:w-14" />
                         <div>Discover</div>
                       </div>
                     </div>

@@ -1,0 +1,41 @@
+---
+interface Props {
+  experience: {
+    date: string;
+    position: string;
+    company: string;
+    link: string;
+  };
+  isLast: boolean;
+}
+
+const { isLast,experience } = Astro.props;
+---
+
+<!-- export let experience;
+    export let isLast; -->
+<div class="about-table-row">
+  <div class="about-column">
+    <div class="paragraph-mini _600-semibold">{experience.date}</div>
+  </div>
+  <div class="about-column">
+    <div class="paragraph-mini _600-semibold">{experience.position}</div>
+  </div>
+  <a href={experience.link} class="about-column column-link w-inline-block">
+    <div class="paragraph-mini _600-semibold">{experience.company}</div>
+    <div class="about-link-embed w-embed">
+      <svg
+        width="9"
+        height="11"
+        viewBox="0 0 9 11"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7.50259 3.34025L1.05882 10.5L0 9.32354L6.44378 2.16378H0.764291V0.5H9V9.65081H7.50259V3.34025Z"
+          fill="currentColor"></path>
+      </svg>
+    </div>
+  </a>
+</div>
+{!isLast ? <div class="divider" /> : ""}

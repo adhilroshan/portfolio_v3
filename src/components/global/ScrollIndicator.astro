@@ -1,0 +1,27 @@
+<div class="page-scroll-indicator-container">
+  <div class="scroll-text">Scroll</div>
+  <div class="page-scroll-indicator-wrapper">
+    <div class="page-scroll-dot"></div>
+    <div class="page-scroll-line"></div>
+  </div>
+</div>
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  document.addEventListener("astro:page-load", () => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(".page-scroll-dot", {
+      y: "50px",
+      scrollTrigger: {
+        trigger: "body",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1,
+        markers: false,
+        toggleActions: "restart pause reverse pause",
+      },
+    });
+  });
+</script>

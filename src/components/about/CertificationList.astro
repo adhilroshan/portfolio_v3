@@ -1,0 +1,23 @@
+---
+interface Props {
+  certificationsData: Array<{
+    date: string;
+    course: string;
+    provider: string;
+    link: string;
+  }>;
+}
+const { certificationsData } = Astro.props;
+import CertificationItem from './CertificationItem.astro';
+---
+
+<div class="about-table">
+  {
+    certificationsData.map((certification,index) => (
+      <CertificationItem
+        {certification}
+        isLast={index === certificationsData.length - 1}
+      />
+    ))
+  }
+</div>

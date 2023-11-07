@@ -1,12 +1,25 @@
 ---
-const currentPath = Astro.url;
-
+import Logo from "./Logo.astro";
 let navItems = [
   { text: "Home", link: "/" },
-  { text: "Work", link: "#Work" },
-  { text: "About", link: "about.html" },
-  { text: "Contact", link: "/contact" },
+  { text: "Work", link: "/#Work" },
+  { text: "About", link: "about" },
+  { text: "Contact", link: "contact" },
 ];
+// let menu = false;
+// let count = 0;
+
+// function toggleMenu() {
+//   if (!menu) {
+//     menu = true;
+//   } else {
+//     menu = false;
+//   }
+//   console.log(menu);
+// }
+
+// let logo='/assets/icon.svg'
+let logo='/assets/logo4.svg'
 ---
 
 <div
@@ -20,13 +33,11 @@ let navItems = [
 >
   <!-- Fixed Nav Menu -->
   <div
-    data-w-id="03aa365d-5a97-c030-89a8-6b2e3f75ae4f"
-    class="fixed-nav-menu-container"
+    class="fixed-nav-menu-container transition-all transform duration-200"
+    transition:animate="slide"
+    data-fixed-menu
   >
-    <div
-      data-w-id="03aa365d-5a97-c030-89a8-6b2e3f75ae5f"
-      class="menu-toggle close"
-    >
+    <div class="menu-toggle group close" data-menu-toggle>
       <div class="menu-lines w-embed">
         <svg
           width="14"
@@ -40,8 +51,14 @@ let navItems = [
             fill="currentColor"></path>
         </svg>
       </div>
-      <div class="border-circle"></div>
-      <div class="fill-circle"></div>
+      <div
+        class="z-[-2] w-full h-full absolute rounded-[50%] border-2 border-solid border-[#181b2e]"
+      >
+      </div>
+      <div
+        class="z-[-1] w-[50px] h-[50px] bg-[#181b2e] absolute translate-x-0 translate-y-[50px] group-hover:translate-y-0 transform transition-transform duration-300 rounded-[50%] inset-[0%]"
+      >
+      </div>
     </div>
     <div class="fixed-nav-menu-wrapper">
       <div class="fixed-nav-menu">
@@ -70,7 +87,10 @@ let navItems = [
   <!-- Fixed Nav Menu ends -->
   <!-- Nav Container -->
   <div class="nav-container">
-    <div data-w-id="03aa365d-5a97-c030-89a8-6b2e3f75ae62" class="menu-toggle">
+    <div
+      data-menu-toggle
+      class="menu-toggle mt-4 group active:scale-95 transition-all duration-300"
+    >
       <div class="menu-lines w-embed">
         <svg
           width="22"
@@ -88,26 +108,33 @@ let navItems = [
             fill="currentColor"></rect>
         </svg>
       </div>
-      <div class="fill-circle"></div>
-      <div class="border-circle"></div>
+      <div
+        class="z-[-1] w-[50px] h-[50px] bg-[#181b2e] absolute translate-x-0 translate-y-[50px] group-hover:translate-y-0 transform rounded-[50%] transition-transform duration-300 inset-[0%]"
+      >
+      </div>
+      <div
+        class="z-[-2] w-full h-full absolute rounded-[50%] border-2 border-solid border-[#181b2e]"
+      >
+      </div>
     </div>
     <!-- TODO: Replace Image -->
-    <!-- <a href="/" aria-current="page" class="brand w-nav-brand w--current"
-      >
-      <img
-        src="https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64b3dfc1dac67d4398e670cf_Logo.svg"
+    <a href="/" aria-current="page" class="brand w-nav-brand w--current">
+      <!-- <img
+        src={logo}
         loading="lazy"
         alt=""
         class="logo"
-      /></a
-    > -->
-    <nav role="navigation" class="nav-menu-container w-nav-menu">
+      /> -->
+      <Logo className="logo  mix-blend-overlay" />
+      </a
+    >
+    <nav class="nav-menu-container w-nav-menu">
       <div class="nav-links-wrapper">
         {
           navItems.map((item) => (
             <a
               href={item.link}
-              class={`nav-link  group ${
+              class={`nav-link flex justify-center group ${
                 item.text === "Home" ? "hidden" : "w-inline-block"
               }`}
             >
@@ -126,8 +153,50 @@ let navItems = [
       </div>
     </nav>
   </div>
-  <!-- Nav Container Ends -->
 </div>
+
+<script>
+  // let menu = false;
+  // function toggleMenu() {
+  //   if (!menu) {
+  //     menu = true;
+  //   } else {
+  //     menu = false;
+  //   }
+  //   console.log(menu);
+  // }
+  const fixedMenu = document.querySelector("[data-fixed-menu]");
+  const menuToggleBtns = document.querySelectorAll("[data-menu-toggle]");
+  menuToggleBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      fixedMenu?.classList.toggle("flexit");
+      if (fixedMenu?.classList.contains("opacity-0") == true) {
+        fixedMenu?.classList.replace("opacity-0", "opacity-100");
+      } else {
+        fixedMenu?.classList.replace("opacity-100", "opacity-0");
+      }
+    });
+  });
+  console.log(fixedMenu?.className);
+  // console.log(fixedMenu?.className);
+</script>
+<style>
+  .flexit {
+    display: flex;
+    animation: 1s slidein;
+  }
+  @keyframes slidein {
+    from {
+      margin-right: 100px;
+    }
+    to{
+      margin-right: 0px;
+    }
+  }
+</style>
+<!-- Nav Container Ends -->
+<!-- 
+  
 
 <style>
   .navbar {
@@ -460,6 +529,8 @@ let navItems = [
     grid-column-gap: 25px;
     display: flex;
   }
+  font-family: Outfit, sans-serif;
+  font-size: 1rem;
 
   .nav-link {
     grid-row-gap: 8px;
@@ -468,8 +539,6 @@ let navItems = [
     justify-content: flex-start;
     align-items: center;
     padding: 12.5px;
-    font-family: Outfit, sans-serif;
-    font-size: 1rem;
     font-weight: 500;
     line-height: 1.3125rem;
     display: flex;
@@ -544,6 +613,9 @@ let navItems = [
     }
   }
 </style>
+
+
+ -->
 
 <!-- .nav-desk
 .navigation

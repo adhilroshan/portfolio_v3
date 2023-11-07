@@ -1,7 +1,9 @@
 ---
-let userImageSrc =
-  "https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64ac2dd42d61ed5ee6e20a89_Hero%20Image.webp";
-let emailAddress = "paul.adams@rnnstudio.com";
+const currentYear = new Date().getFullYear();
+
+let userImageSrc =  "/assets/profile.webp"
+  // "https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64ac2dd42d61ed5ee6e20a89_Hero%20Image.webp";
+let emailAddress = "adhilroshann@gmail.com";
 let socialLinks = [
   {
     iconSrc: "path/to/your/icon1.svg",
@@ -20,11 +22,11 @@ let socialLinks = [
     link: "#",
   },
 ];
-let poweredByText = "Powered by";
+let poweredByText = " Website Made by ";
 let poweredByLink = "#";
-let webflowText = "Webflow";
-let changelogLink = "/template-info/changelog";
-let licenseLink = "/template-info/license";
+let PoweredByPerson = "Adhil";
+// let changelogLink = "/template-info/changelog";
+// let licenseLink = "/template-info/license";
 ---
 
 <section class="footer-section">
@@ -35,7 +37,7 @@ let licenseLink = "/template-info/license";
           src={userImageSrc}
           loading="lazy"
           alt="Hero Image"
-          class="user-image"
+          class="user-image h-auto"
         />
       </div>
       <h3 class="say-hello-h2">Say Hello.</h3>
@@ -46,11 +48,11 @@ let licenseLink = "/template-info/license";
         >
           <div>{emailAddress}</div>
           <img
-            src="path/to/your/email-icon.svg"
-            loading="lazy"
-            alt=""
-            class="website-link-arrow"
-          />
+              src="https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64aedb61df0d42a5c91f4822_Black%20CTA%20Arrow.svg"
+              loading="lazy"
+              alt=""
+              class="website-link-arrow"
+            />
         </a>
         <div class="social-link-blocks-wrapper">
           {
@@ -64,12 +66,13 @@ let licenseLink = "/template-info/license";
           }
         </div>
       </div>
-      <div class="footer-links-wrapper">
+      <!-- <div class="footer-links-wrapper">
         <div class="paragraph-mini body-font-color">
-          © RNN Studio. {poweredByText}
+           {poweredByText} 
           <a href={poweredByLink} class="template-utility-footer-link"
-            >{webflowText}</a
-          >
+            >{PoweredByPerson}</a
+          ><br>
+          &copy; {currentYear}
         </div>
         <div class="template-utility-footer-links-wrapper">
           <a
@@ -81,7 +84,7 @@ let licenseLink = "/template-info/license";
             class="template-utility-footer-link paragraph-mini">License</a
           >
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>

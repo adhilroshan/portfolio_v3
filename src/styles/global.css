@@ -213,15 +213,15 @@ th {
   padding: 0;
 }
 
-@font-face {
+/* @font-face {
   font-family: webflow-icons;
   src: url("data:application/x-font-ttf;charset=utf-8;base64,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")
     format("truetype");
   font-weight: normal;
   font-style: normal;
-}
+} */
 
-[class^="w-icon-"],
+/* [class^="w-icon-"],
 [class*=" w-icon-"] {
   speak: none;
   font-variant: normal;
@@ -257,7 +257,7 @@ th {
 
 .w-icon-file-upload-icon:before {
   content: "î¤ƒ";
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -331,7 +331,7 @@ html[data-w-dynpage] [data-w-cloak] {
   color: rgba(0, 0, 0, 0) !important;
 }
 
-.w-webflow-badge,
+/* .w-webflow-badge,
 .w-webflow-badge * {
   visibility: hidden !important;
   opacity: 0 !important;
@@ -340,7 +340,7 @@ html[data-w-dynpage] [data-w-cloak] {
 .w-webflow-badge > img {
   visibility: hidden !important;
   opacity: 0 !important;
-}
+} */
 
 h1,
 h2,
@@ -1449,7 +1449,7 @@ textarea.w-select {
   }
 }
 
-.w-lightbox-backdrop {
+/* .w-lightbox-backdrop {
   cursor: auto;
   letter-spacing: normal;
   text-indent: 0;
@@ -1873,7 +1873,7 @@ textarea.w-select {
   float: right;
   clear: none;
   margin-left: 15px;
-}
+} */
 
 .w-nav {
   z-index: 1000;
@@ -2067,7 +2067,7 @@ textarea.w-select {
   vertical-align: top;
   text-align: left;
   cursor: pointer;
-  color: #222;  
+  color: #222;
   background-color: #ddd;
   padding: 9px 30px;
   text-decoration: none;
@@ -2553,6 +2553,7 @@ a {
 
 .hero-section {
   background-image: linear-gradient(#f8d5d3, rgba(248, 213, 211, 0));
+  /* background-image: linear-gradient(#d3f8f1, rgba(211, 239, 248, 0)); */
   padding-top: 230px;
   padding-bottom: 250px;
 }
@@ -3170,7 +3171,7 @@ a {
 }
 
 .submit-button {
-  background-color: #fe5621;
+  background-color: #fe5621 !important;
   border-radius: 100px;
   padding: 15px;
   font-family: Outfit, sans-serif;
@@ -4651,7 +4652,7 @@ a {
 
 @font-face {
   font-family: "Generalsans Variable";
-  src: url("https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64ac1c63f51966563eeae824_GeneralSans-Variable.ttf")
+  src: url("/fonts/GeneralSans-Variable.ttf")
     format("truetype");
   font-weight: 200 700;
   font-style: normal;

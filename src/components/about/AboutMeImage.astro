@@ -1,0 +1,17 @@
+---
+interface Props {
+  imageUrl: string | undefined;
+}
+
+const { imageUrl } = Astro.props;
+---
+
+<div class="about-me-image-wrapper">
+  <img src={imageUrl} loading="lazy" alt="User image" class="about-me-image" />
+</div>
+<!-- sizes="(max-width: 479px) 100vw, (max-width: 767px) 88vw, (max-width: 991px) 70vw, 44vw"
+                  srcset="
+                    https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64b21305cb1acb69f60efe83_About%20Me%20Image-p-500.webp  500w,
+                    https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64b21305cb1acb69f60efe83_About%20Me%20Image-p-800.webp  800w,
+                    https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64b21305cb1acb69f60efe83_About%20Me%20Image.webp       1054w
+                  " -->

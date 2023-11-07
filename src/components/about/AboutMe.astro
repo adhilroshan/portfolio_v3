@@ -1,0 +1,330 @@
+---
+import AboutMeImage from "./AboutMeImage.astro";
+import AboutMeText from "./AboutMeText.astro";
+import CertificationList from "./CertificationList.astro";
+import ExperienceList from "./ExperienceList.astro";
+import ICanHelpList from "./ICanHelpList.astro";
+
+let imageUrl ="/assets/profile-img.webp"
+  "https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64b21305cb1acb69f60efe83_About%20Me%20Image.webp";
+
+let aboutText = `
+    I am Adhil Roshan, a creative designer with a passion for crafting
+    captivating visual experiences. With a keen eye for detail and a
+    deep understanding of design principles, I strive to bring ideas
+    to life through innovative and compelling solutions.
+  `;
+
+let experienceData = [
+  {
+    date: "Jan 2015 — Dec 2018",
+    position: "Creative Designer",
+    company: "Green Owl",
+    link: "#",
+  },
+  {
+    date: "Jan 2015 — Dec 2018",
+    position: "Creative Designer",
+    company: "Green Owl",
+    link: "#",
+  },
+  {
+    date: "Jan 2015 — Dec 2018",
+    position: "Creative Designer",
+    company: "Green Owl",
+    link: "#",
+  },
+  {
+    date: "Jan 2015 — Dec 2018",
+    position: "Creative Designer",
+    company: "Green Owl",
+    link: "#",
+  },
+];
+
+let certificationsData = [
+  {
+    date: "Jan 2015",
+    course: "UX Fundamentals Course",
+    provider: "Udemy",
+    link: "#",
+  },
+  {
+    date: "Jan 2014",
+    course: "User Interaction Design",
+    provider: "Skill Share",
+    link: "#",
+  },
+  {
+    date: "Dec 2013",
+    course: "Design and Development",
+    provider: "Udemy",
+    link: "#",
+  },
+  {
+    date: "Mar 2012",
+    course: "Montfort University",
+    provider: "Microsoft",
+    link: "#",
+  },
+];
+
+let helpCategories = [
+  {
+    items: [
+      "Creative Direction",
+      "Logo and Branding",
+      "User Research",
+      "Adobe XD",
+    ],
+  },
+  {
+    title: "Web Development",
+    items: ["WordPress", "Mobile App Designing", "User Interface", "Framer"],
+  },
+];
+---
+
+<section class="about-me-section">
+  <div class="w-layout-blockcontainer main-container w-container">
+    <div class="about-me-container">
+      <div class="aboout-me-row">
+        <div class="about-me-left-flex">
+          <AboutMeImage {imageUrl} />
+        </div>
+
+        <div class="about-me-text-blocks-wrapper">
+          <AboutMeText {aboutText} />
+
+          <div class="about-me-text-block">
+            <h3 class="h3">Experience</h3>
+            <ExperienceList {experienceData} />
+          </div>
+
+          <div class="about-me-text-block">
+            <h4 class="h3">Certifications</h4>
+            <CertificationList {certificationsData} />
+          </div>
+        </div>
+      </div>
+
+      <div class="i-can-help-wrapper">
+        <h5 class="h3">I can help you with..</h5>
+        <ICanHelpList {helpCategories} />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---
+let imageUrl =
+    "https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64b21305cb1acb69f60efe83_About%20Me%20Image.webp";
+
+  let aboutText = `
+    I am Adhil Roshan, a creative designer with a passion for crafting
+    captivating visual experiences. With a keen eye for detail and a
+    deep understanding of design principles, I strive to bring ideas
+    to life through innovative and compelling solutions.
+  `;
+
+  let experienceData = [
+    {
+      date: "Jan 2015 — Dec 2018",
+      position: "Creative Designer",
+      company: "Green Owl",
+      link: "#",
+    },
+    {
+      date: "Jan 2015 — Dec 2018",
+      position: "Creative Designer",
+      company: "Green Owl",
+      link: "#",
+    },
+    {
+      date: "Jan 2015 — Dec 2018",
+      position: "Creative Designer",
+      company: "Green Owl",
+      link: "#",
+    },
+    {
+      date: "Jan 2015 — Dec 2018",
+      position: "Creative Designer",
+      company: "Green Owl",
+      link: "#",
+    },
+  ];
+
+  let certificationsData = [
+    {
+      date: "Jan 2015",
+      course: "UX Fundamentals Course",
+      provider: "Udemy",
+      link: "#",
+    },
+    {
+      date: "Jan 2014",
+      course: "User Interaction Design",
+      provider: "Skill Share",
+      link: "#",
+    },
+    {
+      date: "Dec 2013",
+      course: "Design and Development",
+      provider: "Udemy",
+      link: "#",
+    },
+    {
+      date: "Mar 2012",
+      course: "Montfort University",
+      provider: "Microsoft",
+      link: "#",
+    },
+  ];
+
+  let helpCategories = [
+    {
+      title: "Webflow",
+      items: ["Creative Direction", "Logo and Branding", "User Research", "Adobe XD"],
+    },
+    {
+      title: "Web Development",
+      items: ["WordPress", "Mobile App Designing", "User Interface", "Framer"],
+    },
+  ];
+---
+<section class="about-me-section">
+  <div class="w-layout-blockcontainer main-container w-container">
+    <div class="about-me-container">
+      <div class="aboout-me-row">
+        <div class="about-me-left-flex">
+          <div class="about-me-image-wrapper">
+            <img
+              src={imageUrl}
+              loading="lazy"
+              alt="User image"
+              sizes="(max-width: 479px) 100vw, (max-width: 767px) 88vw, (max-width: 991px) 70vw, 44vw"
+              srcset="
+                  https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64b21305cb1acb69f60efe83_About%20Me%20Image-p-500.webp  500w,
+                  https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64b21305cb1acb69f60efe83_About%20Me%20Image-p-800.webp  800w,
+                  https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64b21305cb1acb69f60efe83_About%20Me%20Image.webp       1054w"
+              class="about-me-image"
+            />
+          </div>
+        </div>
+        <div class="about-me-text-blocks-wrapper">
+          <div class="about-me-text-block">
+            <h2 class="h3">About me</h2>
+            <p class="paragraph">{aboutText}</p>
+          </div>
+          <div class="about-me-text-block">
+            <h3 class="h3">Experience</h3>
+            <div class="about-table">
+              {experienceData.map((experience)=>(
+                <div class="about-table-row">
+                  <div class="about-column">
+                    <div class="paragraph-mini _600-semibold">{experience.date}</div>
+                  </div>
+                  <div class="about-column">
+                    <div class="paragraph-mini _600-semibold">{experience.position}</div>
+                  </div>
+                  <a href={experience.link} class="about-column column-link w-inline-block">
+                    <div class="paragraph-mini _600-semibold">{experience.company}</div>
+                    <div class="about-link-embed w-embed">
+                      <svg
+                        width="9"
+                        height="11"
+                        viewBox="0 0 9 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7.50259 3.34025L1.05882 10.5L0 9.32354L6.44378 2.16378H0.764291V0.5H9V9.65081H7.50259V3.34025Z"
+                          fill="currentColor"
+                        ></path>
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+                { index !== (experienceData.length - 1) ?
+                  (<div class="divider"></div> + ):''
+                }
+                ))  }
+            </div>
+          </div>
+          <div class="about-me-text-block">
+            <h4 class="h3">Certifications</h4>
+            <div class="about-table">
+              {#each certificationsData as certification (index)}
+                <div class="about-table-row justify-start">
+                  <div class="about-column">
+                    <div class="paragraph-mini _600-semibold">{certification.date}</div>
+                  </div>
+                  <div class="about-column">
+                    <div class="paragraph-mini _600-semibold">{certification.course}</div>
+                  </div>
+                  <a href={certification.link} class="about-column certification-link w-inline-block">
+                    <div class="paragraph-mini _600-semibold">{certification.provider}</div>
+                    <div class="about-link-embed w-embed">
+                      <svg
+                        width="9"
+                        height="11"
+                        viewBox="0 0 9 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7.50259 3.34025L1.05882 10.5L0 9.32354L6.44378 2.16378H0.764291V0.5H9V9.65081H7.50259V3.34025Z"
+                          fill="currentColor"
+                        ></path>
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+                {#if index !== certificationsData.length - 1}
+                  <div class="divider"></div>
+                {/if}
+              {/each}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="i-can-help-wrapper">
+        <h5 class="h3">I can help you with..</h5>
+        <div class="i-can-help-rows-wrapper">
+          <div class="help-gradient"></div>
+          <div class="help-gradient left"></div>
+          {#each helpCategories as category (index)}
+            <div
+              class="i-can-help-row _{index + 1}"
+              style="
+                -webkit-transform: translate3d(0px, 0, 0) scale3d(1, 1, 1)
+                  rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                -moz-transform: translate3d(0px, 0, 0) scale3d(1, 1, 1)
+                  rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                -ms-transform: translate3d(0px, 0, 0) scale3d(1, 1, 1)
+                  rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                transform: translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0)
+                  rotateY(0) rotateZ(0) skew(0, 0);
+              "
+            >
+              <div class="i-can-help-blocks-wrapper">
+                {#each category.items as item}
+                  <div class="i-can-help-block">
+                    <div class="h6">{item}</div>
+                  </div>
+                {/each}
+              </div>
+              <div class="i-can-help-blocks-wrapper">
+                {#each category.items as item}
+                  <div class="i-can-help-block">
+                    <div class="h6">{item}</div>
+                  </div>
+                {/each}
+              </div>
+            </div>
+          {/each}
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->

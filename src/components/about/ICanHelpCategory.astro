@@ -1,0 +1,41 @@
+---
+interface Props {
+  category: {
+    items: string[];
+  };
+}
+const { category } = Astro.props;
+---
+
+<div
+  class="i-can-help-row _1"
+  style="
+    -webkit-transform: translate3d(0px, 0, 0) scale3d(1, 1, 1)
+      rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+    -moz-transform: translate3d(0px, 0, 0) scale3d(1, 1, 1)
+      rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+    -ms-transform: translate3d(0px, 0, 0) scale3d(1, 1, 1)
+      rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+    transform: translate3d(0px, 0, 0) scale3d(1, 1, 1) rotateX(0)
+      rotateY(0) rotateZ(0) skew(0, 0);
+  "
+>
+  <div class="i-can-help-blocks-wrapper animate-marquee">
+    {
+      category.items.map((item) => (
+      <div class="i-can-help-block">
+          <div class="h6">{item}</div>
+        </div>
+      ))
+    }
+  </div>
+  <div class="i-can-help-blocks-wrapper animate-marquee">
+    {
+      category.items.map((item) => (
+        <div class="i-can-help-block">
+          <div class="h6">{item}</div>
+        </div>
+      ))
+    }
+  </div>
+</div>

@@ -10,8 +10,17 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/svelte": "^4.0.2",
     "@astrojs/tailwind": "^5.0.0",
+    "@studio-freight/lenis": "^1.0.27",
     "astro": "^3.1.1",
+    "gsap": "^3.12.2",
+    "locomotive-scroll": "5.0.0-beta.8",
+    "split-type": "^0.3.4",
+    "svelte": "^4.0.0",
     "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "@types/locomotive-scroll": "^4.1.2"
   }
 }

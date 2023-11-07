@@ -3,8 +3,8 @@ let heroText =
   "A creative designer with a passion for crafting visual experiences and creative websites.";
 let buttonText = "Read More";
 let linkHref = "/about";
-let heroImageSrc =
-  "https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64ac2dd42d61ed5ee6e20a89_Hero%20Image.webp";
+let heroImageSrc = "/assets/profile.webp";
+// "https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64ac2dd42d61ed5ee6e20a89_Hero%20Image.webp";
 let arrowImageSrc = "/assets/arrow.svg";
 let loopedTextImageSrc = "/assets/scroll-to-see.svg";
 // "https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64ac3324204c04bb25204f6f_Looped%20Text.svg";
@@ -15,16 +15,16 @@ let linkArrowImageSrc = "/assets/arrow-link.svg";
 <section class="hero-section">
   <div class="w-layout-blockcontainer main-container w-container">
     <div class="hero-container">
-      <div class="h4">Hello, I'm Adhil Roshan</div>
+      <div  class="h4">Hello, I'm Adhil Roshan</div>
       <div class="hero-heading-wrapper">
-        <h1 class="display">Creative</h1>
+        <h1 id="text-hero" class="display">Creative</h1>
         <img
           src={heroImageSrc}
           loading="lazy"
           alt="Hero Image"
           class="hero-image"
         />
-        <h1 class="display">— Designer</h1>
+        <h1 id="text-hero" class="display">— Designer</h1>
       </div>
       <div class="hero-text-wrapper">
         <div
@@ -67,7 +67,27 @@ let linkArrowImageSrc = "/assets/arrow-link.svg";
   </div>
 </section>
 
+<script>
+  import { gsap } from "gsap";
+  import SplitType from "split-type";
+
+  const text = SplitType.create("#text-hero");
+  gsap.to(".char", {
+    y: 0,
+    stagger: 0.05,
+    duration: 0.4,
+    delay: 0.2,
+    ease: "power3.inOut",
+  });
+</script>
+
 <style>
+  
+
+  #text-hero {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);    
+  }
+
   .loop-it {
     animation: spin 10s linear infinite;
   }
@@ -78,6 +98,13 @@ let linkArrowImageSrc = "/assets/arrow-link.svg";
     to {
       transform: rotate(360deg);
     }
+  }
+</style>
+<style is:inline>
+  .char {
+    /* opacity: 0; */
+    transform: translateY(100%);
+    transition: transform 0.5s;
   }
 </style>
 

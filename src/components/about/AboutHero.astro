@@ -1,0 +1,32 @@
+---
+let name = "Adhil Roshan";
+let tagline = "I love to design";
+let iconUrl =
+  "https://uploads-ssl.webflow.com/64ac1ab9a54f83f58d02a039/64b21037b69dd7c342f3a3f2_hero-icon.svg";
+let animatingWords = ["Websites", "Interaction", "Visuals", "Websites"];
+---
+
+<section class="about-hero-section">
+  <div class="w-layout-blockcontainer main-container w-container">
+    <div class="about-hero-container">
+      <div class="about-hero-text-wrapper">
+        <div class="h4">
+          Hello, I'm {name}
+          <span class="about-hero-heading-span"> — {tagline}</span>
+        </div>
+        <div class="about-heading-wrapper">
+          <div class="about-heading">
+            <div class="display">B</div>
+            <img src={iconUrl} loading="lazy" alt="" class="about-hero-icon inline-block" />
+            <div class="display">autiful</div>
+          </div>
+          <div class="animating-word-wrapper">
+            <div class="animating-word">
+              {animatingWords.map((word) => <div class="display">{word}</div>)}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
